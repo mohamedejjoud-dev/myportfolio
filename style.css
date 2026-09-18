@@ -36,7 +36,7 @@ body {
     width: 100%;
     background: rgba(5, 11, 24, 0.9);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--text-muted);
     z-index: 1000;
     padding: 18px 0;
 }
@@ -199,7 +199,7 @@ body {
 .profile-img {
     width: 100%;
     max-width: 400px;
-    height: auto;
+    height: 80%;
     position: relative;
     z-index: 2;
     border-radius: 20px;
