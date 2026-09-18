@@ -397,7 +397,7 @@ body {
 .contact-form input, .contact-form textarea {
     width: 100%;
     background: var(--bg-card);
-    border: 1px solid var(--accent-cyan);
+    border: 1px solid var(--text-muted);
     border-radius: 12px;
     padding: 16px 20px;
     color: var(--text-main);
