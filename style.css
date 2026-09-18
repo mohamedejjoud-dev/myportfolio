@@ -218,6 +218,9 @@ body {
     margin-bottom: 50px;
     letter-spacing: 0.5px;
 }
+.section-title span{
+    color: var(--accent-cyan);
+}
 
 .sub-heading {
     font-size: 22px;
@@ -289,7 +292,7 @@ body {
 
 .journey-card {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--accent-cyan);
     border-radius: 15px;
     padding: 25px;
     margin-bottom: 20px;
@@ -335,7 +338,7 @@ body {
 
 .skills-column {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--accent-cyan);
     border-radius: 20px;
     padding: 35px;
 }
@@ -394,7 +397,7 @@ body {
 .contact-form input, .contact-form textarea {
     width: 100%;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--accent-cyan);
     border-radius: 12px;
     padding: 16px 20px;
     color: var(--text-main);
@@ -417,13 +420,13 @@ body {
 /* FOOTER */
 .footer {
     background: var(--bg-card);
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--text-muted);
     text-align: center;
     padding: 25px 0;
 }
 
 .footer p {
-    color: var(--text-muted);
+    color: white;
     font-size: 14px;
 }
 
