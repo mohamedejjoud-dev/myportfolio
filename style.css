@@ -609,3 +609,135 @@ body {
         font-size: 38px;
     }
 }
+/* Mini Tasks Section Styling */
+.mini-projects-section {
+    padding: 70px 20px;
+    background-color: #070d1f;
+}
+
+.mini-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mini-card {
+    background: rgba(18, 30, 64, 0.6);
+    border: 1px solid rgba(0, 242, 254, 0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mini-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0, 242, 254, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.18);
+}
+
+/* Image Box inside Mini Card */
+.mini-img-box {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mini-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.mini-card:hover .mini-img-box img {
+    transform: scale(1.08);
+}
+
+/* Overlay Effect */
+.mini-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 19, 41, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.mini-card:hover .mini-overlay {
+    opacity: 1;
+}
+
+.mini-link {
+    width: 40px;
+    height: 40px;
+    background: #00f2fe;
+    color: #0b1329;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
+
+.mini-link:hover {
+    transform: scale(1.1);
+}
+
+/* Card Content Styling */
+.mini-content {
+    padding: 20px;
+}
+
+.mini-content h3 {
+    color: #ffffff;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.mini-content p {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.mini-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.mini-tags span {
+    background: rgba(0, 242, 254, 0.08);
+    color: #00f2fe;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 242, 254, 0.15);
+}
+
+.mini-links {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-xs {
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
