@@ -1,13 +1,11 @@
 
 const tl = gsap.timeline();
-
 // Navbar - FROM
 tl.from(".navbar", {
     y: -40,
     opacity: 0,
     duration: 0.8
 })
-
 // Hero heading - FROM
 .from(".hero-text-side h1", {
     y: 30,
