@@ -5,23 +5,23 @@ const categories = [
   {
     key: "frontend",
     className: "frontend",
-    emoji: "🎨",
+    index: "01",
   },
   {
     key: "backend",
     className: "backend",
-    emoji: "⚙️",
+    index: "02",
   },
   {
     key: "database",
     className: "database",
-    emoji: "🗄️",
+    index: "03",
   },
 ];
 
 export default function TechStack({ t }) {
   return (
-    <section id="stack" className="techstack">
+    <section id="stack" className="techstack scroll-reveal">
       <div className="container">
         <div className="techstack-header">
           <span className="section-label">{t.label}</span>
@@ -30,14 +30,14 @@ export default function TechStack({ t }) {
         </div>
 
         <div className="techstack-grid">
-          {categories.map(({ key, className, emoji }) => {
+          {categories.map(({ key, className, index }) => {
             const cat = t[key];
             return (
               <div key={key} className={`tech-category ${className}`}>
                 <div className="tech-cat-header">
-                  <div className="tech-cat-icon">{emoji}</div>
+                  <span className="tech-cat-index">{index}</span>
                   <div>
-                    <div className="tech-cat-title">{cat.title}</div>
+                    <h3 className="tech-cat-title">{cat.title}</h3>
                     <div className="tech-cat-subtitle">{cat.subtitle}</div>
                   </div>
                 </div>
