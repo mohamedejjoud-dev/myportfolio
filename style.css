@@ -6,7 +6,6 @@
     --text-muted: #8c9bb2;
     --border-color: #16223b;
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -179,19 +178,17 @@ body {
     color: var(--bg-primary);
     transform: translateY(-3px);
 }
-
-.hero-image-side {
+ .hero-image-side {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} 
 
 .avatar-glow-bg {
     position: absolute;
     width: 380px;
     height: 380px;
-    background: radial-gradient(circle, rgba(0, 242, 254, 0.25) 0%, rgba(5, 11, 24, 0) 70%);
     border-radius: 50%;
     z-index: 1;
 }
@@ -413,7 +410,7 @@ body {
 
 .project-card:hover .project-img-box img {
     transform: scale(1.04);
-}
+ } 
 @keyframes floatAndNeonGlow {
     0%, 100% {
         transform: translateY(0) scale(1);
