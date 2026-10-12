@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./styles/global.css";
 import translations from "./i18n/translations.js";
 
@@ -7,6 +9,8 @@ import About from "./components/About.jsx";
 import TechStack from "./components/TechStack.jsx";
 import Projects from "./components/Projects.jsx";
 import Contact from "./components/Contact.jsx";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
   // ─── Theme (validated & hardened against tampering) ───────
@@ -61,30 +65,58 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ─── Scroll Reveal (Subtle 3D Depth) ──────────────────────
-  useEffect(() => {
-    const elements = document.querySelectorAll(".scroll-reveal");
-    if (!elements.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+  // ─── GSAP ScrollTrigger Reveal ────────────────────────────
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      // Animate each scroll-reveal section
+      gsap.utils.toArray(".scroll-reveal").forEach((section) => {
+        gsap.fromTo(
+          section,
+          {
+            opacity: 0,
+            y: 40,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 85%",
+              end: "top 30%",
+              toggleActions: "play none none none",
+            },
           }
-        });
-      },
-      {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px",
-      }
-    );
+        );
 
-    elements.forEach((el) => observer.observe(el));
+        // Stagger children cards/items inside sections
+        const staggerItems = section.querySelectorAll(
+          ".project-card, .tech-category, .about-fact, .contact-method"
+        );
+        if (staggerItems.length > 0) {
+          gsap.fromTo(
+            staggerItems,
+            { opacity: 0, y: 30, scale: 0.97 },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.6,
+              stagger: 0.1,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 75%",
+                toggleActions: "play none none none",
+              },
+            }
+          );
+        }
+      });
+    });
 
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
+    return () => ctx.revert();
   }, [lang]);
 
   // ─── Mobile menu ──────────────────────────────────────────
@@ -106,6 +138,9 @@ export default function App() {
 
   return (
     <div className="site-wrapper">
+      {/* ── Ambient Background Glow ── */}
+      <div className="ambient-glow" aria-hidden="true" />
+
       {/* ── Navbar ── */}
       <nav ref={navRef} className={`navbar${scrolled ? " scrolled" : ""}`}>
         <div className="container">

@@ -82,13 +82,20 @@
 }
 
 .project-link-btn.live {
-  color: var(--text-primary);
-  border-color: var(--border);
+  color: #ffffff;
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(200, 96, 42, 0.25);
+  transition: all var(--transition);
 }
 
 .project-link-btn.live:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(200, 96, 42, 0.4);
 }
 
 /* In Progress status pill */
