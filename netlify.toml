@@ -1,0 +1,13 @@
+# Netlify configuration for this static site.
+#
+# There is nothing to compile - index.html, style.css, script.js and images/
+# are deployed exactly as they are. The build command stored in the Netlify UI
+# is left over from the earlier Vite version of this repository: it runs
+# `npm run build`, which fails because this project has no package.json.
+#
+# Settings in this file take precedence over the UI, so the build never calls
+# npm and the finished files are published from the repository root.
+
+[build]
+  command = "echo 'static site - no build step'"
+  publish = "."
