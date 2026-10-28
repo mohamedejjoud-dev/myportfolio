@@ -118,7 +118,9 @@ if (modeToggle) {
     window.addEventListener("load", revealReached);
 })();
 
-// Contact form - posts to the local server, which sends mail via Gmail SMTP
+// Contact form - local dev posts to server.py, which sends mail over Gmail SMTP.
+// On the deployed static site there is no server, so the same fields go to the
+// host's form handling (Netlify Forms).
 const contactForm = document.querySelector(".contact-form");
 
 if (contactForm) {
@@ -130,6 +132,11 @@ if (contactForm) {
 
         const data = Object.fromEntries(new FormData(contactForm).entries());
 
+        // Only localhost has server.py running; everywhere else use the static
+        // host's endpoint, which needs a URL-encoded body carrying form-name
+        // and does not accept JSON.
+        const isLocalDev = ["localhost", "127.0.0.1", "[::1]"].includes(window.location.hostname);
+
         const originalLabel = submitBtn.textContent;
         submitBtn.disabled = true;
         submitBtn.textContent = "Sending...";
@@ -140,15 +147,22 @@ if (contactForm) {
         const timer = setTimeout(() => controller.abort(), 15000);
 
         try {
-            const res = await fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
-                body: JSON.stringify(data),
-                signal: controller.signal
-            });
+            const res = isLocalDev
+                ? await fetch("/api/contact", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(data),
+                    signal: controller.signal
+                })
+                : await fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(data).toString(),
+                    signal: controller.signal
+                });
 
             const json = await res.json().catch(() => ({}));
             if (!res.ok || json.success === false) {
