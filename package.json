@@ -1,0 +1,9 @@
+{
+  "name": "mohamed-ejjoud-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio site for Mohamed Ejjoud. No runtime dependencies; the build step stages the files for hosting.",
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}
