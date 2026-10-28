@@ -4,11 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiza Rani - Portfolio</title>
+    <meta name="description" content="Mohamed Ejjoud - Fullstack Developer Portfolio">
+    <meta name="author" content="Mohamed Ejjoud">
+    <title>Mohamed Ejjoud - Fullstack Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <script>
+        try {
+            var m = localStorage.getItem("portfolio-mode");
+            if (!m) m = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            if (m === "dark") document.documentElement.setAttribute("data-theme", "dark");
+        } catch (e) {}
+    </script>
+    <link rel="stylesheet" href="style.css?v=12">
 </head>
 
 <body>
@@ -16,7 +25,7 @@
     <!-- NAVBAR SECTION -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">Fiza Rani<span>.</span></div>
+            <div class="logo">Mohamed Ejjoud<span>.</span></div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -25,6 +34,11 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button type="button" class="mode-toggle" aria-label="Toggle light and dark mode"
+                title="Toggle light / dark mode">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun"></i>
+            </button>
         </div>
     </nav>
 
@@ -32,30 +46,31 @@
     <section class="hero-section" id="home">
         <div class="section-container hero-grid">
             <div class="hero-text-side">
-                <h1>Hi, I'm Fiza Rani,</h1>
-                <h2>Frontend Developer</h2>
-                <p>I build clean, modern, and user-friendly web interfaces with smooth responsive layouts, stunning
-                    glassmorphism styles, and engaging interactive experiences.</p>
+                <h1>Hi, I'm Mohamed Ejjoud,</h1>
+                <h2>Fullstack Developer</h2>
+                <p>Building modern web applications and automation systems with clean architecture.</p>
 
                 <div class="hero-btns">
-                    <a href="#contact" class="btn btn-cyan">Hire Me</a>
-                    <a href="#contact" class="btn btn-outline">Let's Talk</a>
+                    <a href="#projects" class="btn btn-cyan">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
                 </div>
 
                 <div class="social-icons">
-                    <a href="https://github.com/Fiza-Rani-057" target="_blank">
+                    <a href="https://github.com/mohamedEjjoud" target="_blank" rel="noopener" title="GitHub">
                         <i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/fiza-rani-39043b3b6" target="_blank">
+                    <a href="https://www.linkedin.com/in/mohamed-joud-4051ab3a8/" target="_blank" rel="noopener"
+                        title="LinkedIn">
                         <i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="mailto:fizaranisaeed@gmail.com" target="_blank" title="Email">
+                    <a href="mailto:mohamedjoud257@gmail.com" title="Email">
                         <i class="fa-solid fa-envelope"></i>
                     </a>
                 </div>
             </div>
 
             <div class="hero-image-side">
-                <img src="images/image_84b3040-removebg-preview.png" 
-                alt="Fiza Rani" class="">
+                <div class="hero-photo-frame">
+                    <img src="images/mohamed-ejjoud.jpg?v=3" alt="Mohamed Ejjoud">
+                </div>
             </div>
         </div>
     </section>
@@ -65,25 +80,31 @@
         <div class="section-container">
             <h2 class="section-title">About <span>Me</span></h2>
             <div class="about-content">
-                <div class="about-img-box">
-                    <img src="images/image_7b700674.jpg" alt="Fiza Rani" class="exact-image-glow">
-                </div>
                 <div class="about-text-box">
-                    <h3>Passionate Frontend Developer!</h3>
-                    <p>I am a dedicated frontend developer and designer specializing in HTML, CSS, JavaScript, and
-                        modern UI frameworks. I focus on transforming creative design concepts into high-performing,
-                        accessible, and visually appealing web applications.</p>
-                    <p>My goal is to craft seamless user experiences with clean code, responsive layouts, and
-                        interactive animations that make digital products stand out.</p>
-                    <a href="assets/Fiza_Rani_CV.pdf" download="Fiza_Rani_CV.pdf" class="btn btn-cyan">
-                        Download CV
-                    </a>
+                    <h3>Crafting clean, reliable, and functional software</h3>
+                    <p>Hi, I'm <strong>Mohamed Ejjoud</strong> — a fullstack developer based in Morocco. I started my
+                        development journey in 2024, focused on turning ideas into real, well-architected projects from
+                        intuitive user interfaces to solid backend logic.</p>
+                    <p>What started as curiosity quickly evolved into a dedicated craft. I spend my time learning,
+                        building, and refining my engineering skills, primarily with React, Node.js, and automation
+                        platforms like n8n.</p>
+                    <p>I keep my code clear, practical, and efficient — avoiding unnecessary complexity to deliver
+                        reliable solutions that work seamlessly.</p>
+                    <p class="about-note"><i class="fa-solid fa-circle-check"></i> Currently open to junior fullstack
+                        opportunities and selective freelance projects.</p>
+
+                    <ul class="about-facts">
+                        <li><span>Location</span><strong>Morocco</strong></li>
+                        <li><span>Status</span><strong>Available for work</strong></li>
+                        <li><span>Focus</span><strong>Fullstack & Automation</strong></li>
+                        <li><span>Core Stack</span><strong>React · Node.js</strong></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EDUCATION & EXPERIENCE SECTION -->
+    <!-- EDUCATION & ACHIEVEMENTS SECTION -->
     <section class="journey-section" id="education">
         <div class="section-container">
             <h2 class="section-title">My<span>Journey</span></h2>
@@ -95,35 +116,35 @@
                     </h3>
 
                     <div class="journey-card">
-                        <span class="date-badge">2023 - 2025</span>
-                        <h4>Karachi Intermediate Board / Computer Studies</h4>
-                        <p>Completed academic studies focusing on core analytical concepts, problem-solving, and
-                            foundational computer sciences.</p>
+                        <span class="date-badge">2024 - 2026</span>
+                        <h4>ISTA NTIC 2 — Sidi Maârouf, Casablanca</h4>
+                        <p>Institut Spécialisé de Technologie Appliquée. Two years of specialized study in applied
+                            information and communication technology (NTIC).</p>
                     </div>
 
                     <div class="journey-card">
-                        <span class="date-badge">2025 - Present</span>
-                        <h4>Advanced Web Development</h4>
-                        <p>Specializing in modern frontend development techniques, responsive design grids, and
-                            interactive JavaScript features.</p>
+                        <span class="date-badge">Diploma</span>
+                        <h4>Full Stack Web Developer</h4>
+                        <p>Earned a professional diploma in full stack web development, covering front-end interfaces,
+                            backend logic and database work.</p>
                     </div>
                 </div>
 
                 <div class="journey-column">
-                    <h3 class="sub-heading"><i class="fa-solid fa-briefcase"></i> Experience</h3>
+                    <h3 class="sub-heading"><i class="fa-solid fa-trophy"></i> Achievements</h3>
 
                     <div class="journey-card">
-                        <span class="date-badge">2025 - Present</span>
-                        <h4>Frontend Developer (Projects & Portfolio)</h4>
-                        <p>Designing and developing interactive web dashboards, cafe portals, and customized business
-                            web components with clean CSS and JS.</p>
+                        <span class="date-badge">1st Place</span>
+                        <h4>Bootcamp Competition Winner</h4>
+                        <p>Took first place in a development bootcamp competition, building and shipping a working
+                            solution under time pressure.</p>
                     </div>
 
                     <div class="journey-card">
-                        <span class="date-badge">2024 - 2025</span>
-                        <h4>UI/UX Design Enthusiast</h4>
-                        <p>Explored glassmorphic styles, dark neumorphic color schemes, flexbox layouts, and custom
-                            typography integrations.</p>
+                        <span class="date-badge">2024 - Present</span>
+                        <h4>Self-Taught Developer</h4>
+                        <p>Started my development journey in 2024 and keep building real projects with React, Node.js
+                            and automation tools like n8n.</p>
                     </div>
                 </div>
             </div>
@@ -137,52 +158,35 @@
 
             <div class="skills-grid">
                 <div class="skills-column">
-                    <h3 class="sub-heading">Coding Skills</h3>
-
-                    <div class="skill-item">
-                        <div class="skill-info"><span>HTML5 / Semantic Layouts</span><span>95%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 95%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item">
-                        <div class="skill-info"><span>CSS3 / Flexbox / Animations</span><span>90%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 90%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item">
-                        <div class="skill-info"><span>JavaScript (DOM & Logic)</span><span>80%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 80%;"></div>
-                        </div>
+                    <h3 class="sub-heading"><i class="fa-solid fa-code"></i> Frontend</h3>
+                    <div class="skill-tags">
+                        <span>React</span>
+                        <span>JavaScript</span>
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>Responsive Design</span>
                     </div>
                 </div>
 
                 <div class="skills-column">
-                    <h3 class="sub-heading">Professional Skills</h3>
-
-                    <div class="skill-item">
-                        <div class="skill-info"><span>UI/UX Interface Design</span><span>90%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 90%;"></div>
-                        </div>
+                    <h3 class="sub-heading"><i class="fa-solid fa-server"></i> Backend</h3>
+                    <div class="skill-tags">
+                        <span>Node.js</span>
+                        <span>Express.js</span>
+                        <span>Laravel</span>
+                        <span>REST APIs</span>
+                        <span>n8n</span>
                     </div>
+                </div>
 
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Responsive Web Design</span><span>95%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 95%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item">
-                        <div class="skill-info"><span>VS Code & Git Workflows</span><span>85%</span></div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 85%;"></div>
-                        </div>
+                <div class="skills-column">
+                    <h3 class="sub-heading"><i class="fa-solid fa-database"></i> Database & Tools</h3>
+                    <div class="skill-tags">
+                        <span>MongoDB</span>
+                        <span>MySQL</span>
+                        <span>Git</span>
+                        <span>Netlify</span>
+                        <span>Vercel</span>
                     </div>
                 </div>
             </div>
@@ -192,246 +196,87 @@
     <!-- PROJECTS SECTION -->
     <section class="projects-section" id="projects">
         <div class="section-container">
-            <h2 class="section-title">Latest <span>Projects</span></h2>
+            <h2 class="section-title">Featured <span>Projects</span></h2>
+            <p class="section-subtitle">Selected projects demonstrating clean code, responsive design, and practical
+                utility.</p>
 
             <div class="projects-grid">
-                <!-- Project Card 1: KU Sports Website -->
+                <!-- Project Card 1: Product Management -->
                 <div class="project-card">
                     <div class="project-img-box">
                         <div class="project-overlay">
-                            <a class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a class="project-link" href="https://gestion-desproduits.netlify.app/" target="_blank"
+                                rel="noopener" aria-label="View Product Management live demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
-                        <img src="images/image_8517af12.jpg" alt=CampusArena KU Sports">
+                        <img src="images/project-product-management.png" alt="Product Management application">
                     </div>
                     <div class="project-content">
-                        <span class="project-tag">HTML / CSS / JavaScript / Chart.js</span>
-                        <h3>CampusArena KU Sports</h3>
-                        <p>An administrative sports management system dashboard for Karachi University featuring data
-                            visualizations and custom dark mode functionality.</p>
+                        <span class="project-tag">JavaScript / HTML5 / CSS3 / CRUD</span>
+                        <h3>Product Management</h3>
+                        <p>A web application for managing products with CRUD operations.</p>
                         <div class="project-btns">
-                            <a href="https://fiza-rani-057.github.io/CampusArena/" class="btn btn-sm btn-cyan"
-                                target="_blank">Live Demo</a>
-                            <a href="https://github.com/Fiza-Rani-057/CampusArena.git" target="_blank"
-                                class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="https://gestion-desproduits.netlify.app/" class="btn btn-sm btn-cyan"
+                                target="_blank" rel="noopener">Live Demo</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Card 2: Shopping Cart -->
+                <!-- Project Card 2: WaBoT -->
+                <div class="project-card">
+                    <div class="project-img-box">
+                        <img src="images/project-wabot.svg" alt="WaBoT WhatsApp automation platform">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">Node.js / WhatsApp API / Automation</span>
+                        <h3>WaBoT</h3>
+                        <p>An AI-powered WhatsApp automation platform for customer conversations, sales and order
+                            management.</p>
+                        <div class="project-btns">
+                            <span class="project-status"><i class="fa-solid fa-spinner"></i> In Progress</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: CryptoVault -->
                 <div class="project-card">
                     <div class="project-img-box">
                         <div class="project-overlay">
-                            <a class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a class="project-link" href="https://cryptovau.netlify.app/" target="_blank"
+                                rel="noopener" aria-label="View CryptoVault live demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
-                        <img src="images/image_8f1f8d7a.jpg" alt="Shopping Cart Application">
+                        <img src="images/project-cryptovault.png" alt="CryptoVault cryptocurrency dashboard">
                     </div>
                     <div class="project-content">
-                        <span class="project-tag">HTML / CSS / JavaScript</span>
-                        <h3>Interactive Shopping Cart</h3>
-                        <p>A dynamic e-commerce shopping cart application featuring real-time price calculation, item
-                            quantity adjustments, and smooth checkout flow.</p>
+                        <span class="project-tag">React / Crypto API / Real-time / CSS</span>
+                        <h3>CryptoVault</h3>
+                        <p>A cryptocurrency dashboard for viewing crypto prices and market data.</p>
                         <div class="project-btns">
-                            <a href="https://fiza-rani-057.github.io/Shopping-Cart/" class="btn btn-sm btn-cyan"
-                                target="_blank">Live Demo</a>
-                            <a href="https://github.com/Fiza-Rani-057/Shopping-Cart.git" target="_blank"
-                                class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+                            <a href="https://cryptovau.netlify.app/" class="btn btn-sm btn-cyan" target="_blank"
+                                rel="noopener">Live Demo</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project Card 3: Cloud Storage Website -->
+                <!-- Project Card 4: Object Detecte -->
                 <div class="project-card">
                     <div class="project-img-box">
                         <div class="project-overlay">
-                            <a class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a class="project-link" href="https://objectdetecte.netlify.app/" target="_blank"
+                                rel="noopener" aria-label="View Object Detecte live demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
-                        <img src="images/image_1a8e193d.jpg" alt="Cloud Storage Platform">
+                        <img src="images/project-object-detecte.svg" alt="Object Detecte object detection app">
                     </div>
                     <div class="project-content">
-                        <span class="project-tag">Frontend UI / Responsive Grid</span>
-                        <h3>Cloud Storage Platform</h3>
-                        <p>A modern cloud storage web interface with file management layouts, storage status analytics
-                            cards, and sleek dark mode styling.</p>
+                        <span class="project-tag">TensorFlow.js / Computer Vision / AI-ML</span>
+                        <h3>Object Detecte</h3>
+                        <p>A real-time object detection app using TensorFlow.js and webcam feed to identify objects
+                            instantly in the browser.</p>
                         <div class="project-btns">
-                            <a href="https://fiza-rani-057.github.io/-Startup-Landing-Page/" class="btn btn-sm btn-cyan"
-                                target="_blank">Live Demo</a>
-                            <a href="https://github.com/Fiza-Rani-057/-Startup-Landing-Page.git" target="_blank"
-                                class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 4: Coffee Website -->
-                <div class="project-card">
-                    <div class="project-img-box">
-                        <div class="project-overlay">
-                            <a class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <img src="images/image_f4000a79 (1).jpg" alt="Brew Heaven Café">
-                    </div>
-                    <div class="project-content">
-                        <span class="project-tag">HTML / CSS / JavaScript</span>
-                        <h3>Coffee Website</h3>
-                        <p>A fully responsive coffee café web portal featuring custom menu layouts, customer
-                            testimonials, and interactive booking sections.</p>
-                        <div class="project-btns">
-                            <a href="https://fiza-rani-057.github.io/Coffee-Website/" class="btn btn-sm btn-cyan"
-                                target="_blank">Live Demo</a>
-                            <a href="https://github.com/Fiza-Rani-057/Coffee-Website.git" class="btn btn-sm btn-outline"
-                                target="_blank"><i class="fa-brands fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 5: TechServe Portal -->
-                <div class="project-card">
-                    <div class="project-img-box">
-                        <div class="project-overlay">
-                            <a class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <img src="images/image_96551c48.jpg" alt="TechServe Portal">
-                    </div>
-                    <div class="project-content">
-                        <span class="project-tag">Frontend UI / Responsive Grid</span>
-                        <h3>TechServe Service Portal</h3>
-                        <p>Split-screen authentication portal with dark navy styling, cyan call-to-action buttons, and
-                            real-time provider filtering logic.</p>
-                        <div class="project-btns">
-                            <a href="https://fiza-rani-057.github.io/IT-Service-Booking-Platform/"
-                                class="btn btn-sm btn-cyan" target="_blank">Live Demo</a>
-                            <a href="https://github.com/Fiza-Rani-057/IT-Service-Booking-Platform.git" target="_blank"
-                                class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 6: Employee Dashboard -->
-                <div class="project-card">
-                    <div class="project-img-box">
-                        <div class="project-overlay">
-                            <a class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <img src="images/image_e0513b2e.jpg" alt="Employee Dashboard">
-                    </div>
-                    <div class="project-content">
-                        <span class="project-tag">Dashboard & Analytics</span>
-                        <h3>Employee Management System</h3>
-                        <p>Interactive dashboard interface incorporating metric cards with custom linear gradients,
-                            session charts, and data tables.</p>
-                        <div class="project-btns">
-                            <a href="https://fiza-rani-057.github.io/Employee-Management-System/"
-                                class="btn btn-sm btn-cyan" target="_blank">Live Demo</a>
-                            <a href="https://github.com/Fiza-Rani-057/Employee-Management-System.git" target="_blank"
-                                class="btn btn-sm btn-outline"><i class="fa-brands fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="mini-projects-section" id="mini-tasks">
-        <div class="section-container">
-            <h2 class="section-title">Mini Tasks & <span>JS Widgets</span></h2>
-
-            <div class="mini-projects-grid">
-
-                <!-- Task 1: Calculator -->
-                <div class="mini-card">
-                    <div class="mini-img-box">
-                        <div class="mini-overlay">
-                            <a href="https://github.com/Fiza-Rani-057/Calculator" target="_blank" class="mini-link"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <img src="images/image_97254e33.jpg" alt="Modern Calculator">
-                    </div>
-                    <div class="mini-content">
-                        <h3>Modern Calculator</h3>
-                        <p>A functional arithmetic calculator featuring a dark neumorphic interface, smooth button
-                            states, and live display management.</p>
-                        <div class="mini-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="mini-links">
-                            <a href="https://github.com/Fiza-Rani-057/Calculator-App.git" target="_blank"
-                                class="btn btn-xs btn-cyan">
-                                <i class="fa-brands fa-github"></i> View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Task 2: ATM System -->
-                <div class="mini-card">
-                    <div class="mini-img-box">
-                        <div class="mini-overlay">
-                            <a href="https://github.com/Fiza-Rani-057/ATM-System" target="_blank" class="mini-link"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <img src="images/Screenshot 2026-10-05 202824.png" alt="ATM Simulation System">
-                    </div>
-                    <div class="mini-content">
-                        <h3>ATM Simulation System</h3>
-                        <p>Console/DOM-based banking interface handling PIN verification, cash withdrawals, deposits,
-                            and real-time balance tracking.</p>
-                        <div class="mini-tags">
-                            <span>JavaScript Logic</span>
-                            <span>DOM</span>
-                        </div>
-                        <div class="mini-links">
-                            <a href="https://github.com/Fiza-Rani-057/ATM-System.git" target="_blank"
-                                class="btn btn-xs btn-cyan"><i class="fa-brands fa-github"></i> View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Task 3: Todo App -->
-                <div class="mini-card">
-                    <div class="mini-img-box">
-                        <div class="mini-overlay">
-                            <a href="https://github.com/Fiza-Rani-057/Todo-App" target="_blank" class="mini-link"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <img src="images/Screenshot 2026-10-05 203456.png" alt="Dynamic Todo App">
-                    </div>
-                    <div class="mini-content">
-                        <h3>Dynamic Todo App</h3>
-                        <p>Task management application supporting task creation, completion toggles, local storage
-                            persistence, and deletion flows.</p>
-                        <div class="mini-tags">
-                            <span>DOM Manipulation</span>
-                            <span>DataBase</span>
-                        </div>
-                        <div class="mini-links">
-                            <a href="https://github.com/Fiza-Rani-057/TodoApp.git" target="_blank"
-                                class="btn btn-xs btn-cyan"><i class="fa-brands fa-github"></i> View Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Task 4: Analog Clock -->
-                <div class="mini-card">
-                    <div class="mini-img-box">
-                        <div class="mini-overlay">
-                            <a href="https://github.com/Fiza-Rani-057/Analog-Clock" target="_blank" class="mini-link"><i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <img src="images/Screenshot 2026-10-05 203008.png" alt="Live Analog Clock">
-                    </div>
-                    <div class="mini-content">
-                        <h3>Live Analog Clock</h3>
-                        <p>A real-time interactive clock widget featuring smooth hand rotations
-                            and live time tracking powered by JavaScript.A dynamic analog clock
-                        </p>
-                        <div class="mini-tags">
-                            <span>CSS Transforms</span>
-                            <span>setInterval</span>
-                        </div>
-                        <div class="mini-links">
-                            <a href="https://github.com/Fiza-Rani-057/Analog-Clock.git" target="_blank"
-                                class="btn btn-xs btn-cyan"><i class="fa-brands fa-github"></i> View Code</a>
+                            <a href="https://objectdetecte.netlify.app/" class="btn btn-sm btn-cyan" target="_blank"
+                                rel="noopener">Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -444,32 +289,61 @@
     <section class="contact-section" id="contact">
         <div class="section-container">
             <h2 class="section-title">Contact<span>Me!</span></h2>
+            <p class="section-subtitle">Have a project in mind or looking for a developer? Feel free to reach out
+                directly.</p>
 
-            <form class="contact-form">
+            <form class="contact-form" action="/api/contact" method="POST">
                 <div class="form-row">
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Email Address" required>
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
                 </div>
                 <div class="form-row">
-                    <input type="text" placeholder="Mobile Number" required>
-                    <input type="text" placeholder="Email Subject" required>
+                    <input type="text" name="phone" placeholder="Mobile Number" required>
+                    <input type="text" name="subject" placeholder="Email Subject" required>
                 </div>
                 <div class="form-row">
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                 </div>
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
                 <button type="submit" class="btn btn-cyan submit-btn">Submit Message</button>
+                <p class="form-status" role="status" aria-live="polite"></p>
             </form>
+
+            <div class="contact-links">
+                <a class="contact-link" href="mailto:mohamedjoud257@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="contact-link-text">
+                        <span>Email</span>
+                        <strong>mohamedjoud257@gmail.com</strong>
+                    </span>
+                </a>
+                <a class="contact-link" href="https://github.com/mohamedEjjoud" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github"></i>
+                    <span class="contact-link-text">
+                        <span>GitHub</span>
+                        <strong>github.com/mohamedEjjoud</strong>
+                    </span>
+                </a>
+                <a class="contact-link" href="https://www.linkedin.com/in/mohamed-joud-4051ab3a8/" target="_blank"
+                    rel="noopener">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <span class="contact-link-text">
+                        <span>LinkedIn</span>
+                        <strong>linkedin.com/in/mohamed-joud</strong>
+                    </span>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-        <p>Copyright &copy; 2026 Fiza Rani. All rights reserved.</p>
+        <p>Copyright © 2026 Mohamed Ejjoud. All rights reserved.</p>
     </footer>
     <!-- GSAP Core library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=11"></script>
 </body>
 
 </html>

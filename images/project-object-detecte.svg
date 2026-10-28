@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="600" height="240" role="img" aria-label="Object Detecte real-time object detection app">
+  <defs>
+    <linearGradient id="od-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050b18"/>
+      <stop offset="1" stop-color="#0b1a33"/>
+    </linearGradient>
+    <pattern id="od-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#16223b" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="240" fill="url(#od-bg)"/>
+  <rect width="600" height="240" fill="url(#od-grid)" opacity="0.55"/>
+
+  <!-- detected subject -->
+  <circle cx="270" cy="72" r="30" fill="#17335c"/>
+  <rect x="225" y="110" width="90" height="94" rx="28" fill="#17335c"/>
+
+  <!-- secondary object -->
+  <path d="M392 146 h60 v40 a14 14 0 0 1 -14 14 h-32 a14 14 0 0 1 -14 -14 z" fill="#17335c"/>
+  <path d="M452 154 h10 a12 12 0 0 1 0 24 h-10" fill="none" stroke="#17335c" stroke-width="7"/>
+
+  <!-- bounding box 1 -->
+  <rect x="205" y="28" width="130" height="176" fill="none" stroke="#00f2fe" stroke-width="3"/>
+  <rect x="205" y="6" width="104" height="22" fill="#00f2fe"/>
+  <text x="213" y="22" font-family="ui-monospace, Consolas, monospace" font-size="13" fill="#050b18">person 98%</text>
+
+  <!-- bounding box 2 -->
+  <rect x="380" y="136" width="90" height="72" fill="none" stroke="#7c5cff" stroke-width="3"/>
+  <rect x="380" y="114" width="76" height="22" fill="#7c5cff"/>
+  <text x="388" y="130" font-family="ui-monospace, Consolas, monospace" font-size="13" fill="#ffffff">cup 91%</text>
+</svg>

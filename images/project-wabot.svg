@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" width="600" height="240" role="img" aria-label="WaBoT WhatsApp automation platform">
+  <defs>
+    <linearGradient id="wb-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050b18"/>
+      <stop offset="1" stop-color="#0b1a33"/>
+    </linearGradient>
+    <pattern id="wb-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#16223b" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="600" height="240" fill="url(#wb-bg)"/>
+  <rect width="600" height="240" fill="url(#wb-grid)" opacity="0.55"/>
+
+  <!-- incoming message -->
+  <rect x="70" y="55" width="180" height="64" rx="14" fill="#12253f" stroke="#16223b"/>
+  <rect x="90" y="75" width="140" height="9" rx="4.5" fill="#2a3d5c"/>
+  <rect x="90" y="94" width="100" height="9" rx="4.5" fill="#2a3d5c"/>
+
+  <!-- flow connectors -->
+  <path d="M252 88 L266 108" stroke="#00f2fe" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+  <path d="M336 132 L350 164" stroke="#00f2fe" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+
+  <!-- bot -->
+  <circle cx="300" cy="120" r="36" fill="#081229" stroke="#00f2fe" stroke-width="2"/>
+  <line x1="300" y1="86" x2="300" y2="74" stroke="#00f2fe" stroke-width="2"/>
+  <circle cx="300" cy="71" r="4" fill="#00f2fe"/>
+  <rect x="282" y="104" width="36" height="28" rx="9" fill="#0f1e3d" stroke="#00f2fe" stroke-width="1.5"/>
+  <circle cx="292" cy="118" r="4" fill="#00f2fe"/>
+  <circle cx="308" cy="118" r="4" fill="#00f2fe"/>
+
+  <!-- automated reply -->
+  <rect x="350" y="135" width="180" height="64" rx="14" fill="#0d2b33" stroke="#00f2fe"/>
+  <rect x="370" y="155" width="140" height="9" rx="4.5" fill="#00f2fe" opacity="0.7"/>
+  <rect x="370" y="174" width="92" height="9" rx="4.5" fill="#00f2fe" opacity="0.45"/>
+</svg>

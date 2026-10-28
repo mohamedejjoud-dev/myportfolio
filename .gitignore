@@ -1,0 +1,6 @@
+# Local SMTP credentials - keep out of version control
+smtp_config.env
+
+# Local run log and review screenshots - not site assets
+server.log
+screenshots/
